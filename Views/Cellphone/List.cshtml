@@ -1,0 +1,28 @@
+﻿@model List<CrudWAuth.Entities.Cellphone>
+<form method="=post">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Value</th>
+                <th scope="col">Edit/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cellphone in Model)
+            {
+                <tr>
+                    <td>@cellphone.Id</td>
+                    <td>@cellphone.Brand</td>
+                    <td>@cellphone.CpValue</td>
+                    <td>
+                        <a asp-controller="Cellphone" asp-action="Edit" asp-route-id="@cellphone.Id"> Edit</a>
+                        <a asp-action="Delete" asp-route-id="@cellphone.Id"> Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</form>
